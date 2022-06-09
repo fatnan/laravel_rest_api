@@ -19,6 +19,8 @@ Route::post('/register', [App\Http\Controllers\API\AuthController::class, 'regis
 //API route for login user
 Route::post('/login', [App\Http\Controllers\API\AuthController::class, 'login']);
 
+Route::get('/git',[App\Http\Controllers\API\GitController::class,'index']);
+
 //Protecting Routes
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get('/profile', function(Request $request) {
