@@ -27,4 +27,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     // API route for logout user
     Route::post('/logout', [App\Http\Controllers\API\AuthController::class, 'logout']);
+
+    // Address route
+    Route::resource('address', App\Http\Controllers\API\AddressController::class);
 });
